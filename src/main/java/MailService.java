@@ -1,13 +1,14 @@
 
 import java.util.Properties;
-import javax.mail.Authenticator;
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
+
+import jakarta.mail.Authenticator;
+import jakarta.mail.Message;
+import jakarta.mail.MessagingException;
+import jakarta.mail.PasswordAuthentication;
+import jakarta.mail.Session;
+import jakarta.mail.Transport;
+import jakarta.mail.internet.InternetAddress;
+import jakarta.mail.internet.MimeMessage;
 
 public class MailService {
 
@@ -18,10 +19,9 @@ public class MailService {
 			// 設定使用SSL連線至 Gmail smtp Server
 			Properties props = new Properties();
 			props.put("mail.smtp.host", "smtp.gmail.com");
-			props.put("mail.smtp.socketFactory.port", "465");
-			props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+			props.put("mail.smtp.port", "587");
 			props.put("mail.smtp.auth", "true");
-			props.put("mail.smtp.port", "465");
+			props.put("mail.smtp.starttls.enable", "true");
 
 	        // ●設定 gmail 的帳號 & 密碼 (將藉由你的Gmail來傳送Email)
 	        // ●1) 登入你的Gmail的: 
